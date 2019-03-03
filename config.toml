@@ -1,0 +1,4 @@
+baseURL = "https://www.larsabrasha.com"
+languageCode = "sv-se"
+title = "Larsabrasha"
+theme = "larsabrasha"

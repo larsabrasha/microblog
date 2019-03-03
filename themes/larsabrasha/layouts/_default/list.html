@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+<div class="mx-auto" style="max-width: 600px">
+  <div class="my-sm-3 p-3 bg-white rounded shadow-sm">
+    {{ range.Pages }}
+    <div class="mb-4">
+      {{ partial "micropost" . }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}

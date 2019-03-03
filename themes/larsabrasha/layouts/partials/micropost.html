@@ -1,0 +1,32 @@
+<div class="d-flex">
+  <div class="mr-2">
+    <img
+      src="/images/gravatar-40.jpeg"
+      width="40"
+      height="40"
+      class="rounded-circle"
+    />
+  </div>
+  <div class="flex-grow-1">
+    <div class="mb-1">
+      <strong>{{ .Params.Author }}</strong>
+      <a href="{{.Permalink}}" class="text-muted"
+        ><span class=" pl-2"
+          >{{.Date.Day}}
+          {{ index $.Site.Data.months (printf "%d" .Date.Month)}}
+          {{.Date.Year}}</span
+        ></a
+      >
+    </div>
+    {{ .Content }}
+    {{- $images := .Resources.ByType "image" -}}
+    {{- range $images -}}
+    {{- $image := .Resize "520x q90" -}}
+    <p>
+      <a href="{{ .RelPermalink }}">
+        <img src="{{ $image.RelPermalink }}" width="100%" class="rounded" />
+      </a>
+    </p>
+    {{ end }}
+  </div>
+</div>
